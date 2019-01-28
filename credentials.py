@@ -1,5 +1,6 @@
 import pyperclip
-
+import random
+import string
 class Credentials:
     '''
     class that generates  instances of credential
@@ -26,7 +27,14 @@ class Credentials:
         '''
 
         credential.credential_list.remove(self)
-  
+   @classmethod
+    def find_by_name(cls,credential_detail):
+        '''
+        This method helps to search through the credential list using the username.
+        '''
+        for credential in cls.credential_list:
+            if credential.credential_detail ==credential_detail:
+                return credential
     @classmethod
     def find_by_password(cls,password):
         '''
@@ -56,14 +64,4 @@ class Credentials:
 
         return False
 
-    @classmethod
-    def display_credentials(cls):
-        '''
-        method that returns the credentials list
-        '''
-        return cls.credentials_list
 
-    @classmethod
-    def copy_email(cls,password):
-        credentials_found = credentials.find_by_password(password)
-        pyperclip.copy(credentials_found.email) 
