@@ -1,61 +1,68 @@
 #!/usr/bin/env python3.6
 import pyperclip
+from user import User
+from credentials import Credentials
+
 def create_user(username,password,email):
   '''
   Function to create a new user
   '''
   new_user = User(username,password,email)
   return new_user
-​
 def save_user(user):
   '''
   Function to save user
   '''
   user.save_user()
-​
-def del_user(user):
-  '''
-  Function to delete a user
-  '''
-  user.delete_user()
-​
-def create_credential (username,password):
-  '''
-  Function that allows user to add new details in their account
-  '''
-  create_credent = Credentials(username ,password)
-  return create_credent
+def delete_user(user):
+    '''
+    This function deletes a user 
+    '''
+    user.delete_user()
 
-def save_credential (credential):
-      '''
-  Function that allows user to save new details in their account
-  '''
-  return create_credent
+def create_new_credential(credential_detail,password):
+    ''' 
+    This function allows a user create a new credential account
+    '''
+    new_credential = Credentials(credential_detail ,_password)
+    return new_credential
 
-def verify_user(username):
-    	'''
+def save_new_credentials(credential):
+    ''' 
+    This is a function to save new credentials created 
+    '''
+    credential.save_credential()
+
+def delete_credentials(credential):
+    '''
+    This is a function to delete credentials by the user 
+    '''
+    return Credentials.delete_credential(credential)
+
+def verify_user(name):
+	'''
 	Function that checks if the username already exists in the system
 	'''
-	check_user = Credentials.find_by_name(username)
+	checking_user = Credentials.find_by_name(name)
 	return checking_user
-
-def find_credentials(credential_details):
+ 
+def find_credentials(credential_detail):
    '''
-     Function to find credentials that are there
+     Function to find stored credentials
     '''
-   return Credentials.find_by_name(credential_details)
+   return Credentials.find_by_name(credential_detail)
 
-def check_existing_credentials(cedential_details):
-       '''
+def check_existing_credentials(name):
+   '''
    Function to check if an inputed credential name exists
     '''
-   return Credentials.find_by_name(credential_details)
+   return Credentials.find_by_name(name)
 
-def copy_credential(credential_details):
+def copy_credential(credential_detail):
 	'''
 	Function to copy a credentials details to the clipboard
 	'''
-	return Credentials.copy_credential(credential_details)
+	return Credentials.copy_credential(credential_detail)
 
 def display_credential():
     '''
