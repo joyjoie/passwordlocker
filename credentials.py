@@ -14,7 +14,7 @@ class Credentials:
         self.password = password
         self.email = email
 
-    #cedential_list = [] # Empty credential list
+    #credential_list = [] # Empty credential list
     def save_credential(self):
         '''save_credential method saves credentials objects into list
         '''
