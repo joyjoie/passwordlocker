@@ -50,20 +50,20 @@ class Credentials:
         Returns :
             Boolean: True or false depending if the user exists
         '''
-        for user in cls.user_list:
-            if user.password == password:
+        for credentials in cls.credentials_list:
+            if credentials.password == password:
                     return True
 
         return False
 
     @classmethod
-    def display_users(cls):
+    def display_credentials(cls):
         '''
-        method that returns the user list
+        method that returns the credentials list
         '''
-        return cls.user_list
+        return cls.credentials_list
 
     @classmethod
     def copy_email(cls,password):
-        user_found = user.find_by_password(password)
-        pyperclip.copy(user_found.email) 
+        credentials_found = credentials.find_by_password(password)
+        pyperclip.copy(credentials_found.email) 
