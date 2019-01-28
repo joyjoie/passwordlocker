@@ -5,7 +5,7 @@ class Credentials:
     '''
     class that generates  instances of credential
     '''
-   credential_list = []
+    credential_list = []
     def __init__(self,credential_detail,password,):
         '''__init__ methods helps us define properties for our objects
         '''
@@ -27,7 +27,7 @@ class Credentials:
         '''
 
         credential.credential_list.remove(self)
-   @classmethod
+    @classmethod
     def find_by_name(cls,credential_detail):
         '''
         This method helps to search through the credential list using the username.
@@ -35,6 +35,7 @@ class Credentials:
         for credential in cls.credential_list:
             if credential.credential_detail ==credential_detail:
                 return credential
+
     @classmethod
     def find_by_password(cls,password):
         '''
@@ -49,6 +50,7 @@ class Credentials:
         for credentials in cls.credential_list:
             if credentials.password== password:
                 return credentials
+
     @classmethod
     def credentials_exist(cls,password):
         '''
