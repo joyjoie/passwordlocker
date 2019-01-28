@@ -9,23 +9,23 @@ class Credentials:
         '''__init__ methods helps us define properties for our objects
         '''
         #this is an example of a comment
-        self.username = username
+        self.user_detail = userdetail
         self.password = password
         self.email = email
 
-    #user_list = [] # Empty user list
-    def save_user(self):
-        '''save_user method saves user objects into user list
+    #cedential_list = [] # Empty credential list
+    def save_credential(self):
+        '''save_credential method saves credentials objects into list
         '''
-        user.user_list.append(self)
+        Credentials.credential_list.append(self)
     
-    def delete_user(self):
+    def delete_credential(self):
 
         '''
-        delete_user method deletes a saved user from the user_list
+        delete_credential method deletes a saved credential ser from the user_list
         '''
 
-        user.user_list.remove(self)
+        credential.credential_list.remove(self)
   
     @classmethod
     def find_by_password(cls,password):
