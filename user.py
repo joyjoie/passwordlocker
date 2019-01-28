@@ -5,7 +5,7 @@ class User:
     class that generates new instances of user
     '''
     user_list = []
-    def __init__(self,username,,password,email,):
+    def __init__(self,username,password,email,):
         '''__init__ methods helps us define properties for out objects
         '''
         #this is an example of a comment

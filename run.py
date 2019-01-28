@@ -1,9 +1,8 @@
 #!/usr/bin/env python3.6
 import pyperclip
-​
 def create_user(username,password,email):
   '''
-  Function to create a newuser
+  Function to create a new user
   '''
   new_user = User(username,password,email)
   return new_user
@@ -33,16 +32,16 @@ def save_credential (credential):
   '''
   return create_credent
 
-def verify_user(name):
+def verify_user(username):
     	'''
 	Function that checks if the username already exists in the system
 	'''
-	checking_user = Credentials.find_by_name(name)
+	check_user = Credentials.find_by_name(username)
 	return checking_user
 
 def find_credentials(credential_details):
    '''
-     Function to find credentials that exist
+     Function to find credentials that are there
     '''
    return Credentials.find_by_name(credential_details)
 
@@ -57,3 +56,16 @@ def copy_credential(credential_details):
 	Function to copy a credentials details to the clipboard
 	'''
 	return Credentials.copy_credential(credential_details)
+
+def display_credential():
+    '''
+    Function to display credentials of an account
+    '''
+    return Credentials.display_credential()
+
+def generate_password():
+    '''
+    This is a function to generate random password
+    '''
+    gen_pass = Credentials.generate_password()
+    return gen_pass
