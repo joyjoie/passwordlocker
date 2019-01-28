@@ -1,4 +1,4 @@
-# Github Search
+# Password Locker
 #### Date of Current Version, January 28 2019
 #### By **Joy King'oo**
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
