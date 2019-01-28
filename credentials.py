@@ -5,11 +5,11 @@ class Credentials:
     class that generates  instances of credential
     '''
    credential_list = []
-    def __init__(self,user_detail,password,):
+    def __init__(self,credential_detail,password,):
         '''__init__ methods helps us define properties for our objects
         '''
         #this is an example of a comment
-        self.user_detail = userdetail
+        self.credential_detail = credentialdetail
         self.password = password
         self.email = email
 
@@ -35,16 +35,16 @@ class Credentials:
         Args:
             password: password to search for
         Returns :
-            user of person that matches the password.
+            credentials of person that matches the password.
         '''
 
-        for user in cls.user_list:
-            if user.password== password:
-                return user
+        for credentials in cls.credential_list:
+            if credentials.password== password:
+                return credentials
     @classmethod
-    def user_exist(cls,password):
+    def credentials_exist(cls,password):
         '''
-        Method that checks if a user exists from the user list.
+        Method that checks if a credential exists from the user list.
         Args:
             password: Password to search if it exists
         Returns :
