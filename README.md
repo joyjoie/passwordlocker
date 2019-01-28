@@ -8,3 +8,8 @@ This is a simple app which allows a user to create an account with their persona
 Try it out.<https://github.com/joyjoie/passwordlocker>
 ## Development 
 This app was created using python as the programming language and use of vscode as the IDE for the development of the app.
+## Known Bugs
+There are currently no known bugs but if you find any mail me at wendokingoo@gmail.com
+
+Copyright (c) 2018 **Joy King'oo**
+
