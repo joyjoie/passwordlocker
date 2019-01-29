@@ -76,3 +76,17 @@ def generate_password():
     '''
     gen_pass = Credentials.generate_password()
     return gen_pass
+
+
+def main():
+    print("Hello Welcome to your login. What is your name?")
+    user_name = input()
+
+    print(f"Hello {user_name}. what would you like to do?")
+    print('\n')
+    while True:
+                    print("Use these short codes : cd - create new details, dc - display details,  ex -exit the program  ")
+
+if __name__ == '__main__':
+    
+    main()

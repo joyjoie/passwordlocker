@@ -79,7 +79,7 @@ class TestCredential(unittest.TestCase):
         test_credential = Credentials("Twitter","test12")
         test_credential.save_credential()
         credential_exists = Credentials.find_by_name("Twitter")
-
+                                            
         self.assertTrue(credential_exists)
 
 
