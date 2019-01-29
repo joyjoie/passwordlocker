@@ -12,7 +12,7 @@ class Credentials:
         #this is an example of a comment
         self.credential_detail = credential_detail
         self.password = password
-        self.email = email
+      
 
     #credential_list = [] # Empty credential list
     def save_credential(self):
@@ -26,7 +26,8 @@ class Credentials:
         delete_credential method deletes a saved credential ser from the user_list
         '''
 
-        credential.credential_list.remove(self)
+        Credentials.credential_list.remove(self)
+
     @classmethod
     def find_by_name(cls,credential_detail):
         '''
@@ -52,7 +53,22 @@ class Credentials:
                 return credentials
 
     @classmethod
-    def credentials_exist(cls,password):
+    def display_credential(cls):
+        """
+        Method which displays all credentials list
+        """
+        return cls.credential_list
+
+    def generate_password(stringLength=8,char= string.ascii_letters+string.digits):
+        '''
+        This is a method to generate random string passwords for the application
+        '''
+
+        gen_pass = ''.join(random.choice(char) for i in range(stringLength))
+        return gen_pass
+
+    @classmethod
+    def credential_exists(cls,password):
         '''
         Method that checks if a credential exists from the user list.
         Args:
@@ -60,7 +76,7 @@ class Credentials:
         Returns :
             Boolean: True or false depending if the user exists
         '''
-        for credentials in cls.credentials_list:
+        for credentials in cls.credential_list:
             if credentials.password == password:
                     return True
 
