@@ -68,16 +68,13 @@ class Credentials:
         return gen_pass
 
     @classmethod
-    def credential_exists(cls,password):
+    def credential_exists(cls,name):
         '''
-        Method that checks if a credential exists from the user list.
-        Args:
-            password: Password to search if it exists
-        Returns :
-            Boolean: True or false depending if the user exists
+        The method would check if any credential exists
+    
         '''
         for credentials in cls.credential_list:
-            if credentials.password == password:
+            if credential.credential_detail == name:
                     return True
 
         return False
