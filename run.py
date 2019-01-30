@@ -76,6 +76,11 @@ def generate_password():
     '''
     gen_pass = Credentials.generate_password()
     return gen_pass
+def display_user():
+    '''
+    Function to display user of an account
+    '''
+    return User.display_user()
 
 
 def main():
@@ -85,7 +90,41 @@ def main():
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
     while True:
-                    print("Use these short codes : cd - create new details, dc - display details,  ex -exit the program  ")
+        print("Use these short codes : cd - create new details, dc - display details, ex -exit the program  ")
+        short_code = input().lower()
+        if short_code == 'cd':
+            print("New Contact")
+            print("-"*10)
+            user_name = input()
+            print ("User name ....")
+            email = input()
+            print("Email address ...")
+            password = input()
+            print("Password ...")
+                  
+            save_user(create_user(user_name,email,password)) # create and save new details.
+            print ('\n')
+            print(f"New User {user_name} {email} {password} created")
+            print ('\n')
+        elif short_code == 'dc':
+            
+                print("Here is a list of your details")
+                print('\n')
+                for user in display_user():
+                    print(f"{user_name}... {email} .....")
+                    print('\n')
+                    
+            # print(f"{user_name} {email} {password}")
+            # else:
+            #     print('\n')
+            #     print("You dont seem to have any details saved yet")
+            #     print('\n')
+        elif short_code == "ex":
+            print("Bye .......")
+            break
+        else:
+            print("I really didn't get that. Please use the short codes")
+
 
 if __name__ == '__main__':
     
